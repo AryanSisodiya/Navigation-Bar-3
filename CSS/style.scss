@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Redressed&family=Syne+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: auto overlay;
+  background-color: #fa8bff;
+  background-image: linear-gradient(
+    -45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
+  min-width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  // transition: all .5s ease-in-out;
+}
+
+.navbar {
+  z-index: 5;
+
+  .nav-1 {
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.624);
+    width: 100vw;
+    // height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .nav-heading {
+      font-size: 90px;
+      text-align: center;
+      font-family: "Redressed", cursive;
+      display: inline-block;
+      color: transparent;
+      cursor: pointer;
+      background: linear-gradient(
+        90deg,
+        rgb(218, 190, 255),
+        rgb(183, 255, 125)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        font-size: 95px;
+      }
+    }
+
+    .dark-html-btn {
+      position: absolute;
+      right: 15px;
+      height: 8%;
+      cursor: pointer;
+      filter: invert(1);
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        height: 10%;
+      }
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0px;
+}
+
+.nav-2 {
+  display: flex;
+  align-items: center;
+  //   padding: 0px 10px;
+  color: white;
+  font-family: "Syne Mono", monospace;
+  font-size: 25px;
+  /*   position: sticky;
+  top: 0px;
+  left: 0px; */
+  //   z-index: 11;
+  background: rgba(0, 0, 0, 0.808);
+  padding: 8px;
+  transition: all 1s ease 0s;
+  justify-content: center;
+  z-index: 5;
+
+  .logo {
+    height: 70px;
+    border: 2px solid white;
+    border-radius: 23px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    z-index: 6;
+
+    &:hover {
+      height: 75px;
+    }
+  }
+}
+
+.nav-ul {
+  display: flex;
+
+  .nav-li {
+    list-style: none;
+    padding: 13px 33px;
+    margin: 0px 30px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    text-align: end;
+
+    a {
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    &:hover {
+      font-size: 30px;
+      background-color: white;
+      border-radius: 5px;
+
+      a {
+        color: #182331;
+      }
+    }
+
+    &:active {
+      transition: none;
+      filter: invert(20%);
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+  border-radius: 5px;
+}
+
+.context-menu {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  z-index: 6;
+
+  .context-menu-h {
+    display: inline-block;
+    background: white;
+    padding: 7px 17px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 4px #f1e2e2;
+    cursor: pointer;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      font-size: 1.3em;
+    }
+  }
+}
+
+.context-menu.context-menu-show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.close-btn {
+  height: 30px;
+  cursor: pointer;
+  // transition: all 0.5s ease-in-out;
+
+  &:hover {
+    // height: 35px;
+    filter: invert(50%);
+  }
+
+  &:active {
+    // transition: none;
+    filter: invert(70%);
+  }
+}
+
+.p {
+  // transition: all 5s ease-in-out;
+  padding: 25px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.87);
+  color: white;
+  text-align: center;
+  padding: 40px;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+
+  p,
+  div {
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    padding: 0;
+
+    &:hover {
+      font-size: 21px;
+    }
+  }
+
+  .footer-btn {
+    color: #b5c7da;
+    text-decoration: none;
+    transition: font-size 0.5s ease-in-out;
+
+    &:hover {
+      font-size: 21px;
+      text-decoration: underline;
+      color: blue;
+    }
+
+    &:active {
+      transition: none;
+      /* text-decoration: underline; */
+      color: red;
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  filter: invert(1);
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  // z-index: 5;
+
+  &:hover {
+    height: 65px;
+  }
+}
+
+.menu-close {
+  list-style: none;
+  box-sizing: content-box;
+  margin: 0px 30px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  height: 50px;
+  padding: 13px 28px;
+  display: none;
+
+  img {
+    // position: relative;
+    height: inherit !important;
+  }
+
+  &:hover {
+    height: 65px;
+  }
+}
+
+/* @keyframes open-menu {
+  from {
+    position: fixed;
+    right: -325px;
+  }
+
+  to {
+    position: fixed;
+    right: 0;
+  }
+} */
+
+@media only screen and (max-width: 972px) {
+  .hamburger,
+  .menu-close {
+    display: inline-block;
+    z-index: 5;
+    padding-right: 15px;
+  }
+
+  .nav-ul {
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    right: -325px;
+    height: 100vh;
+    background: linear-gradient(-90deg, #b3ffa0, #80ff61);
+    padding: 84px 10px;
+    z-index: 5;
+    padding-top: 192px;
+    transition: all 1s ease-in-out;
+  }
+
+  .nav-2 {
+    justify-content: space-between;
+  }
+
+  .nav-li {
+    a {
+      background-image: linear-gradient(90deg, #6868ff, #00005a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent !important;
+      font-weight: bold;
+    }
+  }
+
+  .show-nav {
+    right: 0;
+  }
+
+  .change-color {
+    filter: invert(0);
+    padding-right: 58px;
+  }
+}
+
+@media only screen and (max-width: 484px) {
+  footer {
+    padding: 15px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  footer {
+    font-size: 15px;
+
+    &:hover {
+      font-size: 20px;
+    }
+  }
+
+  .nav-heading {
+    font-size: 70px !important;
+
+    &:hover {
+      font-size: 75px !important;
+    }
+  }
+}
